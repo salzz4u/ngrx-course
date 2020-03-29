@@ -8,7 +8,6 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {StoreModule} from '@ngrx/store';
 import {AuthService} from './auth.service';
-import {EffectsModule} from '@ngrx/effects';
 import * as fromAuth from './reducers';
 
 @NgModule({
@@ -19,7 +18,7 @@ import * as fromAuth from './reducers';
     MatInputModule,
     MatButtonModule,
     RouterModule.forChild([{path: '', component: LoginComponent}]),
-    StoreModule.forFeature('auth', fromAuth.reducers),
+    StoreModule.forFeature('auth', fromAuth.authReducer),
 
   ],
   declarations: [LoginComponent],
